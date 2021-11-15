@@ -1,0 +1,8 @@
+{
+    "mode-dis": "base",
+    "freesurfers": [ "testdata/output1", "testdata/output2" ],
+
+    "mode": "long",
+    "template": "testdata/template",
+    "freesurfer": "testdata/output1"
+}
