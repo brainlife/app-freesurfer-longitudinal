@@ -1,0 +1,8 @@
+{
+    "mode": "base",
+    "freesurfers": [ 
+        "testdata/proj-5fd37e5cdecf133f0daca92a/sub-P0007/dt-neuro-freesurfer.tag-acpc_aligned.tag-preprocessed.id-602e14f6dfe50e586e2083b1/output",
+        "testdata/proj-5fd37e5cdecf133f0daca92a/sub-P0009/dt-neuro-freesurfer.tag-acpc_aligned.tag-preprocessed.id-602d6bb8dfe50e185f16a7a8/output",
+        "testdata/proj-5fd37e5cdecf133f0daca92a/sub-P0010/dt-neuro-freesurfer.tag-acpc_aligned.tag-preprocessed.id-602dd2d5dfe50e03931ccc0d/output"
+    ]
+}
