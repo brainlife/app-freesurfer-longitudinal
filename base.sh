@@ -38,12 +38,15 @@ export SUBJECTS_DIR=`pwd`/subjects
 cd subjects
 recon-all $cmd -all
 
+mkdir output
+#map subject/template as output in brainlife
+ln -s subject/template output/output
+
 cat > product.json <<EOF
 {
     "meta":{
         "longitudinal": true
     },
-    "datatypes": [ "longitudinal" ]
 }
 EOF
 
