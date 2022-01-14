@@ -5,17 +5,26 @@ set -x
 
 echo "running longitudinal processing"
 
-freesurfer=`jq -r .freesurfer config.json`
 template=`jq -r .template config.json`
-
-#export OMP_NUM_THREADS=8
+freesurfer=`jq -r .freesurfer config.json`
 
 rm -rf subjects
 mkdir -p subjects
 
-ln -s ../$freesurfer subjects/input
+md5sum=$(md5sum $freesurfer/mri/norm.mgz | awk '{print $1}')
+ln -s ../$freesurfer subjects/$md5sum
 ln -s ../$template subjects/template
 
 export SUBJECTS_DIR=`pwd`/subjects
 cd $SUBJECTS_DIR
-recon-all -long input template -all
+recon-all -long $md5sum template -al
+
+mkdir output
+ln -s subject/$mdsum.long.template 
+
+#TODO
+#cat > product.json <<EOF
+#{
+#}
+#EOF
+
