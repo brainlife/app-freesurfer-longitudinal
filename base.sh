@@ -34,9 +34,11 @@ print(cmd)
 END
 `
 
+(
 export SUBJECTS_DIR=`pwd`/subjects
 cd subjects
 recon-all $cmd -all
+)
 
 mkdir output
 #map subject/template as output in brainlife
