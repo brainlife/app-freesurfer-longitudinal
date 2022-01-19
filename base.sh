@@ -21,11 +21,11 @@ import hashlib
 with open("config.json") as f:
     config = json.load(f)
 
-md5hash = hashlib.md5() 
 for i,f in enumerate(config["freesurfers"]):
     #compute md5sum of norm.mgz to be used as tp name
     with open(f+"/mri/norm.mgz") as fnorm:
         norm = fnorm.read()
+        md5hash = hashlib.md5() 
         md5hash.update(norm)
         digest = md5hash.hexdigest()
     os.symlink("../"+f, "subjects/"+digest)
