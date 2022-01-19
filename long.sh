@@ -17,7 +17,7 @@ ln -s ../$template subjects/template
 
 export SUBJECTS_DIR=`pwd`/subjects
 cd $SUBJECTS_DIR
-recon-all -long $md5sum template -al
+recon-all -long $md5sum template
 
 mkdir output
 ln -s subject/$mdsum.long.template 
