@@ -40,13 +40,22 @@ cd subjects
 recon-all $cmd -all
 )
 
-mkdir output
-#map subject/template as output in brainlife
-ln -s ../subjects/template output/output
+#construct neuro/freesurfer/longitudinal (https://brainlife.io/datatypes/59bbfadd6b956e1c2ae89ef3)
+rm -rf output
+mkdir -p output
+for dir in $(ls subjects); do
+    if [ "$dir" == "template" ]; then
+        ln -s ../subjects/template output/template
+    else
+        mkdir output/$dir
+        ln -s ../../subjects/$dir/mri output/$dir/mri
+    fi
+done
 
+#generate meta
 cat > product.json <<EOF
 {
-    "meta":{
+    "meta": {
         "longitudinal": true
     },
 }

@@ -1,5 +1,6 @@
 {
     "mode": "long",
+    "freesurfer": "testdata/output1",
     "template": "testdata/template",
-    "freesurfer": "testdata/output1"
+    "timepoints": "testdata/timepoints"
 }
