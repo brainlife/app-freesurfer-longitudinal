@@ -26,7 +26,7 @@ cd $SUBJECTS_DIR
 recon-all -long $md5sum template -all
 
 mkdir output
-ln -s subject/$mdsum.long.template 
+ln -s subject/$mdsum.long.template
 
 #TODO
 #cat > product.json <<EOF
