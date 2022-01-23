@@ -21,9 +21,11 @@ for dir in $(ls $timepoints); do
     fi
 done
 
+(
 export SUBJECTS_DIR=`pwd`/subjects
 cd $SUBJECTS_DIR
 recon-all -long $md5sum template -all
+)
 
 mkdir output
 ln -s subject/$md5sum.long.template output/output
