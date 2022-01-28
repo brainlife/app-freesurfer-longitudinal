@@ -34,11 +34,13 @@ print(cmd)
 END
 `
 
+if [ ! -d output ]; then
 (
 export SUBJECTS_DIR=`pwd`/subjects
 cd subjects
 recon-all $cmd -all
 )
+fi
 
 #construct neuro/freesurfer/longitudinal (https://brainlife.io/datatypes/59bbfadd6b956e1c2ae89ef3)
 rm -rf output
