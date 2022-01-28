@@ -47,7 +47,7 @@ for dir in $(ls subjects); do
     if [ "$dir" == "template" ]; then
         ln -s ../subjects/template output/template
     else
-        mkdir output/timepoints/$dir
+        mkdir -p output/timepoints/$dir
         ln -s ../../../subjects/$dir/mri output/timepoints/$dir/mri
     fi
 done
