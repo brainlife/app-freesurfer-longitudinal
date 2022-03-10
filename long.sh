@@ -17,7 +17,7 @@ ln -s ../$template subjects/template
 
 #copy the base
 #ln -s ../$freesurfer subjects/$md5sum
-cp -r ../$freesurfer subjects/$md5sum
+cp -r $freesurfer subjects/$md5sum
 chmod -R +w subjects/$md5sum
 
 #copy timepoint inputs
