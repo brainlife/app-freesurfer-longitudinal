@@ -17,12 +17,13 @@ ln -s ../$template subjects/template
 ln -s ../$freesurfer subjects/$md5sum
 for dir in $(ls $timepoints); do
     if [ "$dir" != "$md5sum" ]; then
-        ln -s $(realpath $timepoints/$dir) subjects/$dir
+        #ln -s $(realpath $timepoints/$dir) subjects/$dir
+        cp $timepoints/$dir subjects/$dir
     fi
 done
 
 (
-export SUBJECTS_DIR=`pwd`/subjects
+export SUBJECTS_DIR=`pwd`/subjects #do I really need pwd?
 cd $SUBJECTS_DIR
 recon-all -long $md5sum template -all
 )
