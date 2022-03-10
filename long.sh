@@ -18,7 +18,8 @@ ln -s ../$freesurfer subjects/$md5sum
 for dir in $(ls $timepoints); do
     if [ "$dir" != "$md5sum" ]; then
         #ln -s $(realpath $timepoints/$dir) subjects/$dir
-        cp $timepoints/$dir subjects/$dir
+        cp -r $timepoints/$dir subjects/$dir
+        chmod -R +w subjects/$dir
     fi
 done
 
