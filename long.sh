@@ -18,16 +18,18 @@ ln -s ../$template subjects/template
 #copy the base
 #ln -s ../$freesurfer subjects/$md5sum
 cp -r $freesurfer subjects/$md5sum
-chmod -R +w subjects/$md5sum
 
 #copy timepoint inputs
 for dir in $(ls $timepoints); do
     if [ "$dir" != "$md5sum" ]; then
         #ln -s $(realpath $timepoints/$dir) subjects/$dir
         cp -r $timepoints/$dir subjects/$dir
-        chmod -R +w subjects/$dir
     fi
 done
+
+#make sure recon-all can write stuff to subjects directory
+#(not sure why it does that.. but it does)
+chmod -R +w subjects
 
 (
 export SUBJECTS_DIR=`pwd`/subjects #do I really need pwd?
