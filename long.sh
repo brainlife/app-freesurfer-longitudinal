@@ -23,9 +23,9 @@ chmod -R +w subjects/$md5sum
 #copy timepoint inputs
 for dir in $(ls $timepoints); do
     if [ "$dir" != "$md5sum" ]; then
-        ln -s $(realpath $timepoints/$dir) subjects/$dir
-        #cp -r $timepoints/$dir subjects/$dir
-        #chmod -R +w subjects/$dir
+        #ln -s $(realpath $timepoints/$dir) subjects/$dir
+        cp -r $timepoints/$dir subjects/$dir
+        chmod -R +w subjects/$dir
     fi
 done
 
