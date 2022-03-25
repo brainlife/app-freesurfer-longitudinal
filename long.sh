@@ -13,7 +13,8 @@ timepoints=`jq -r .timepoints config.json`
 rm -rf subjects
 mkdir -p subjects
 md5sum=$(md5sum $freesurfer/mri/norm.mgz | awk '{print $1}')
-ln -s ../$template subjects/template
+#ln -s ../$template subjects/template
+cp -r $template subjects/template
 
 #copy the base
 #ln -s ../$freesurfer subjects/$md5sum
